@@ -1,9 +1,9 @@
 # mask
  openscad 3d printed face mask with modular filter</br>
- scad files included for size adjustment/modification.
+ + scad files included for size adjustment/modification.
 </br>
-fits in <b>110mm</b> Delta print bed.</br>
- prints in 1 Hour 20 min.</br>
+ + fits in <b>110mm</b> Delta print bed.</br>
+ + prints in 1 Hour 20 min.</br>
  + ~ 16Min each screen.</br></br>
 
 
