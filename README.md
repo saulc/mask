@@ -4,13 +4,15 @@
 </br>
  + fits in <b>110mm</b> Delta print bed.</br>
  + prints in 1 Hour 20 min.</br>
- + ~ 16Min each screen.</br></br>
-
-
+ + ~ 16Min each screen. x2 </br>
+ + sized for M4 x 8-12mm</br>
+</br>
 
 <img src="https://raw.githubusercontent.com/saulc/mask/master/img/Screen%20Shot%202020-04-07%20at%208.13.01%20PM.png"></br>
 <img src="https://raw.githubusercontent.com/saulc/mask/master/img/Screen%20Shot%202020-04-07%20at%208.13.23%20PM.png"></br>
 
+paper filter between 2 screens.
+</br>
 <img src="https://raw.githubusercontent.com/saulc/mask/master/img/IMG_20200407_202758.jpg" width="400px"></br>
 
 
