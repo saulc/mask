@@ -8,8 +8,13 @@ fn = 60;
  w = 55;  
  l = 80;  //vertical length
   ll = 4;  //chin offset
+  lf = 6; //chin cutout?
+  tz = 7; //vertical offset
+  
   l2 = l - 9; //print face
   w2 = w - 7;   //print face
+  
+  
   
   oc = 19;  //outter coner
   ic = 17; //inner corner
@@ -17,7 +22,6 @@ fn = 60;
   t = 17;    //lowwer negative taper
   tt = 7;   //upper positivev taper
   
-  tz = 7; //vertical offset
   
  wall = 1.5*2;
  fwall = 1.2*2;
@@ -44,7 +48,11 @@ module mask(){
         sup();
     }
         
-    gc();
+        translate([0,-1, 137-2])  rotate([90,0,0])  cy(222, 11, fn);
+//    grid();               //vertical screen
+    vc();                   //v  screen
+    //gc();                 //open cut
+   // translate([0,0, 2])  //no outside holes.
     holes();
     translate([0,6+1,7]) rotate([90,0,0]) sidecut();
         //top cutoff
@@ -65,12 +73,12 @@ module in(){
         hull(){
              
         translate([0,l+7, h+11]) sp(ic, fn);
-        translate([0,-ll, h+11]) sp(ic, fn);
+        translate([0,4, h+2])  rotate([0,90,0])  cy(ic, 1, fn);
             
         translate([0,0, h-1]) base(w+tt-wall, l-wall, 2, ic); 
         translate([0,0, h-tz]) base(w-wall, l-wall, 2, ic); 
         }
-             translate([0, -oc+11, h-8])   rotate([0,90,0])  cy(oc, l, fn);
+             translate([0, -oc+11, h-11])   rotate([0,90,0])  cy(oc, l, fn);
     }
     }
 }
@@ -82,12 +90,12 @@ module out(){
         hull(){
         translate([0,0, 0]) base(w-t, l-t, 2, oc);  
         translate([0,0, h-tz]) base(w, l, 2, oc);  
-             translate([0, -ll, h-1])   rotate([0,90,0])  cy(3, 22, fn);
+             translate([0, -ll, h-lf])   rotate([0,90,0])  cy(3, 22, fn);
         } 
         hull(){
         translate([0,0, h-2]) base(w+tt, l, 2, oc); 
         translate([0,0, h-tz]) base(w, l, 2, oc); 
-             translate([0, -ll, h-1])   rotate([0,90,0])  cy(3, 22, fn);
+             translate([0, -ll, h-lf])   rotate([0,90,0])  cy(3, 22, fn);
              
         }
     }
@@ -117,6 +125,12 @@ module grid(){
   }
 }
 
+module vc(){
+    difference(){
+        gc(); 
+  for(j=[-1,1]) rotate([0,0, j*11]) translate([0, 28])  c(3, 66, h);
+   }
+}
 module gc(){
     
     hull(){
